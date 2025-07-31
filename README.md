@@ -1,12 +1,67 @@
-# React + Vite
+# Random Avatar Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and fun React application built with Vite that allows users to generate random avatars using the [DiceBear API](https://www.dicebear.com/). You can choose from various avatar styles, generate a new one with a click, and download it as an SVG file.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Multiple Avatar Styles**: Choose from a variety of styles including Human, Pixel Art, Bots, Notionists, and more.
+-   **Random Generation**: Instantly generate a unique avatar.
+-   **Download SVG**: Download the generated avatar in high-quality SVG format.
+-   **Simple UI**: Easy-to-use interface for a seamless experience.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   **Frontend**: React.js
+-   **Build Tool**: Vite
+-   **API**: [DiceBear HTTP API](https://www.dicebear.com/how-to-use/http-api)
+-   **Styling**: CSS
+
+## ⚙️ Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed on your machine.
+-   [Node.js](https://nodejs.org/)
+-   [npm](https://www.npmjs.com/get-npm)
+
+### Installation
+
+1.  Clone the repo:
+    ```sh
+    git clone https://github.com/Arindam-Roy2004/Random-Avatar-Generator.git
+    ```
+2.  Navigate into the project directory:
+    ```sh
+    cd my-avatar-app
+    ```
+3.  Install NPM packages:
+    ```sh
+    npm install
+    ```
+
+### Running the App
+
+To run the app in development mode, use the `dev` script from [`package.json`](./package.json):
+
+```sh
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser. The page will reload when you make changes.
+
+## 📂 Project Structure
+
+```
+my-avatar-app/
+├── src/
+│   ├── components/
+│   │   └── Avatar.jsx      # Core component for avatar generation and UI
+│   ├── styles/
+│   │   └── Avatar.css      # Styles for the Avatar component
+│   ├── App.jsx             # Main application component
+│   └── main.jsx            # Application entry point
+├── package.json
+└── vite.config.js
+```
