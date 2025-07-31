@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
+// import Axios from 'axios';
 import '../styles/Avatar.css';
 
 
@@ -16,22 +16,16 @@ export default function Avatar(){
     }
 
     function downloadImage() {
-        Axios({
-            method: "get",
-            url: `https://api.dicebear.com/8.x/${sprite}/svg?seed=${seed}`,
-            responseType: "blob"
-        }).then(response => {
+        fetch(`https://api.dicebear.com/8.x/${sprite}/svg?seed=${seed}`)
+            .then(response => response.blob())
+            .then(blob => {
             const link = document.createElement("a");
-            link.href = window.URL.createObjectURL(new Blob([response.data], { type: "image/svg+xml" }));
+            link.href = URL.createObjectURL(blob);
             link.download = `${seed}.svg`;
             document.body.appendChild(link);
             link.click();
-            setTimeout(() => {
-                window.URL.revokeObjectURL(link);
-            }, 200);
-        }).catch(error => {
-            console.log(error);
-        });
+            document.body.removeChild(link);
+            }).catch(console.error);
     }
     return (
         <div className="container">
